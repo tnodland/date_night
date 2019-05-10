@@ -91,8 +91,8 @@ class Tree
     end
 
     sorted_nodes.each do |node|
-      hashed_nodes << Hash.new("#{node.title}" => node.score)
       binding.pry
+      hashed_nodes << Hash.new("#{node.title}" => node.score)
     end
 
     return hashed_nodes
