@@ -79,6 +79,22 @@ class Tree
   end
 
   def sort
+    sorted_nodes = []
+    hashed_nodes = []
+    min_score = self.min
+    first_node = find_by_score(min_score)
 
+    sorted_nodes << first_node
+
+    unless sorted_nodes.last.right_node.nil?
+      sorted_nodes << sorted_nodes.last.right_node
+    end
+
+    sorted_nodes.each do |node|
+      hashed_nodes << Hash.new("#{node.title}" => node.score)
+      binding.pry
+    end
+
+    return hashed_nodes
   end
 end
